@@ -1,7 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import { Button } from 'antd';
-import { List, Typography } from 'antd';
+import { List, Typography } from 'antd'; 
+import styled from 'styled-components';
+const { Title } = Typography;
+
+const ImgWrapper = styled.img`
+  width: 30px;
+  border-radius:50%;
+`;
+
+const TopTitle = styled.p`
+  text-align: center;
+  font-size:18px;
+  font-weight: bold;
+  margin: 0;
+`;
 
 const data = [
     ['신촌점','https://calendar.google.com/calendar/embed?src=fo9if3lrltseqj4fj4ot53spso%40group.calendar.google.com&ctz=Asia%2FSeoul', 'https://m.map.kakao.com/actions/searchView?q=%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EB%85%B8%EA%B3%A0%EC%82%B0%EB%8F%99%2056-25&wxEnc=LVSOTP&wyEnc=QNLTTMN&lvl=4#!/LWSOUO,QNLSPQM/map/place'],
@@ -14,20 +28,21 @@ const data = [
 const ScheduleList = () => {
 
   return (
-    <div>
-        <List
-        header={<div>맥아트 스튜디오 스케줄 리스트</div>}
-        footer={<div>대관 문의 : 01047369161</div>}
+    <>
+      <List
+        header={<TopTitle>맥아트 스튜디오 스케줄</TopTitle>}
+        footer={<div>대관 문의 : <Link href="tel:01047369161"><a>01047369161</a></Link></div>}
         bordered
         dataSource={data}
         renderItem={item => (
             <List.Item>
-                    <Link href={item[1]}><a>{item[0]}</a></Link>
-                    <Button><Link href={item[2]}><a>위치보기</a></Link></Button>
+              <Link href={item[1]}><a>{item[0]}</a></Link>
+              <Link href={item[2]}><a><ImgWrapper src="/kakaomap.png" /></a></Link>
+              {/* <Button size={'default'}><Link href={item[2]}><a><img src="/kakaomap.png" />=</a></Link></Button> */}
             </List.Item>
         )}
-        />
-    </div>
+      />
+    </>
   );
 };
 

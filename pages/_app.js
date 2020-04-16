@@ -1,21 +1,94 @@
+import App from 'next/app'
 import React from 'react';
-import Head from 'next/head';
+import { ThemeProvider } from 'styled-components'
 import 'antd/dist/antd.css';
 import ScheduleList from '../components/ScheduleList';
+import FooterList from '../components/FooterList';
+import { Helmet } from 'react-helmet';
 
-const MacArt = ({ Component }) => {
-  return (
-    <>
-      <Head>
-        <title>댄스월드</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.css" />
-        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8f25a0f7a15e0a4ca3cc5ecf2b3b115c"></script>
-      </Head>
-      <ScheduleList>
-        <Component />  
-      </ScheduleList>  
-    </>
-  );
-};
 
-export default MacArt;
+const theme = {
+  colors: {
+    primary: '#0070f3',
+  },
+}
+
+export default class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <>
+       <Helmet
+          title="맥아트 스튜디오 스케줄"
+          htmlAttributes={{ lang: 'ko' }}
+          meta={[{
+            charset: 'UTF-8',
+          }, {
+            name: 'viewport',
+            content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover',
+          }, {
+            'http-equiv': 'X-UA-Compatible', content: 'IE=edge',
+          }, {
+            name: 'description', content: '맥아트 스튜디오',
+          }, {
+            name: 'og:title', content: '맥아트 스튜디오',
+          }, {
+            name: 'og:description', content: '맥아트 스튜디오',
+          }, {
+            property: 'og:type', content: 'website',
+          }, {
+            property: 'og:image', content: 'https://danceworld.shop/favicon.ico',
+          }]}
+          link={[{
+            rel: 'shortcut icon', href: '/favicon.ico',
+          }]}
+        />
+        <ThemeProvider theme={theme}>
+          <ScheduleList>
+            <Component {...pageProps} />
+          </ScheduleList>
+          <FooterList />
+        </ThemeProvider>
+      </>
+    )
+  }
+}
+
+// const MacArt = ({ Component }) => {
+//   return (
+//     <>
+//       <Helmet
+//           title="맥아트 스튜디오 스케줄"
+//           htmlAttributes={{ lang: 'ko' }}
+//           meta={[{
+//             charset: 'UTF-8',
+//           }, {
+//             name: 'viewport',
+//             content: 'width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover',
+//           }, {
+//             'http-equiv': 'X-UA-Compatible', content: 'IE=edge',
+//           }, {
+//             name: 'description', content: '맥아트 스튜디오',
+//           }, {
+//             name: 'og:title', content: '맥아트 스튜디오',
+//           }, {
+//             name: 'og:description', content: '맥아트 스튜디오',
+//           }, {
+//             property: 'og:type', content: 'website',
+//           }, {
+//             property: 'og:image', content: 'https://danceworld.shop/favicon.ico',
+//           }]}
+//           link={[{
+//             rel: 'shortcut icon', href: '/favicon.ico',
+//           }]}
+//         />
+//         <ThemeProvider>
+//           <ScheduleList>
+//             <Component />  
+//           </ScheduleList>  
+//         </ThemeProvider>
+//     </>
+//   );
+// };
+
+// export default MacArt;
