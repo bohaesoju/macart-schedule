@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "prestart": "npm run build",
-    "start": "PORT=80 pm2 next start"
+    "start": "PORT=80 next start"
   },
   "keywords": [],
   "author": "",
