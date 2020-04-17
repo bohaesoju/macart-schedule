@@ -1,9 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Button } from 'antd';
-import { List, Typography } from 'antd'; 
 import styled from 'styled-components';
-const { Title } = Typography;
 
 const DanceWorldTitle = styled.p`
   font-weight: bold;
