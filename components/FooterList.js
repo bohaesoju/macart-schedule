@@ -20,6 +20,18 @@ const LinkListWrap = styled.ul`
   }
 `;
 
+const Footer = styled.div`
+    border-top: 1px solid #e4e4e4;
+    padding-top: 10px;
+    /* background: #f2f2f2; */
+    text-align: center;
+    height: 100%;
+    p{
+        font-size:13px;
+        color:#5f6368;
+    }
+`;
+
 const FooterList = () => {
     return(
         <>
@@ -37,6 +49,9 @@ const FooterList = () => {
                     <Link href="https://www.youtube.com/channel/UCvVrtyEDEJzo8P1JwEB4NKQ"><a><img src="/youtube.png" /></a></Link>
                 </li>
             </LinkListWrap>
+            <Footer>
+                <p>Made with by Uyjoong Kim</p>
+            </Footer> 
         </>
       )
 };
