@@ -22,9 +22,9 @@ export default class MyApp extends App {
         <title>맥아트 스튜디오 스케줄</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=yes,viewport-fit=cover" />
         <link rel="shortcut icon" href="/favicon.ico"></link>
-        <meta name="description" content="맥아트 스튜디오"></meta>
-        <meta name="og:title" content="맥아트 스튜디오"></meta>
-        <meta name="og:description" content="맥아트 스튜디오"></meta>
+        <meta name="description" content="맥아트 스튜디오 대관 현황 조회"></meta>
+        <meta name="og:title" content="맥아트 스튜디오 리스트"></meta>
+        <meta name="og:description" content="맥아트 스튜디오 대관 현황 조회"></meta>
         <meta property="og:type" content="website"></meta>
         <meta property="og:image" content="http://danceworld.shop/favicon.ico"></meta>
       </Head>
