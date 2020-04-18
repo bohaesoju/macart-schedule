@@ -37,7 +37,7 @@ export default class MyApp extends App {
           }, {
             property: 'og:type', content: 'website',
           }, {
-            property: 'og:image', content: 'https://danceworld.shop/favicon.ico',
+            property: 'og:image', content: 'http://danceworld.shop/favicon.ico',
           }]}
           link={[{
             rel: 'shortcut icon', href: '/favicon.ico',
@@ -54,9 +54,9 @@ export default class MyApp extends App {
   }
 }
 
-// const MacArt = ({ Component }) => {
+// const MacArt = ({ Component, pageProps, theme }) => {
 //   return (
-//     <>
+//     <Container>
 //       <Helmet
 //           title="맥아트 스튜디오 스케줄"
 //           htmlAttributes={{ lang: 'ko' }}
@@ -76,18 +76,19 @@ export default class MyApp extends App {
 //           }, {
 //             property: 'og:type', content: 'website',
 //           }, {
-//             property: 'og:image', content: 'https://danceworld.shop/favicon.ico',
+//             property: 'og:image', content: 'http://danceworld.shop/favicon.ico',
 //           }]}
 //           link={[{
 //             rel: 'shortcut icon', href: '/favicon.ico',
 //           }]}
 //         />
-//         <ThemeProvider>
+//         <ThemeProvider theme={theme}>
 //           <ScheduleList>
-//             <Component />  
+//             <Component {...pageProps}/>  
 //           </ScheduleList>  
+//           <FooterList />
 //         </ThemeProvider>
-//     </>
+//     </Container>
 //   );
 // };
 
