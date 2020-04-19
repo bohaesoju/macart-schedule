@@ -14,7 +14,7 @@ const LinkListWrap = styled.ul`
       flex-basis: 33.3%;
       text-align: center;
       img{
-          width:70px;
+          width:60px;
           border-radius: 50%;
       }
   }
@@ -33,6 +33,13 @@ const Footer = styled.div`
     }
 `;
 
+const danceworldList = [
+    ['naver.jpeg','https://m.cafe.naver.com/sublimecreww'],
+    ['instagram.png','https://www.instagram.com/dancew0rld/?hl=ko'],
+    ['youtube.png','https://www.youtube.com/channel/UCvVrtyEDEJzo8P1JwEB4NKQ'],
+    ['naverblog.png','https://blog.naver.com/PostList.nhn?blogId=danceworld1215'],
+  ];
+
 const FooterList = () => {
     return(
         <>
@@ -40,15 +47,13 @@ const FooterList = () => {
                 댄스월드
             </DanceWorldTitle>
             <LinkListWrap>
-                <li>
-                    <Link href="https://m.cafe.naver.com/sublimecreww"><a><img src="/naver.jpeg" /></a></Link>
-                </li>
-                <li>
-                    <Link href="https://www.instagram.com/dancew0rld/?hl=ko"><a><img src="/instagram.png" /></a></Link>
-                </li>
-                <li>
-                    <Link href="https://www.youtube.com/channel/UCvVrtyEDEJzo8P1JwEB4NKQ"><a><img src="/youtube.png" /></a></Link>
-                </li>
+            {danceworldList.map((e, i) => {
+                return(
+                    <li key={i}>
+                        <Link href={e[1]}><a><img src={e[0]} /></a></Link>
+                    </li>
+                )
+            })}
             </LinkListWrap>
             <Footer>
                 <p>Made with by <Link href="https://www.instagram.com/uyjoong/?hl=ko"><a>Uyjoong Kim</a></Link></p>
