@@ -24,7 +24,7 @@ const TopTitle = styled.p`
 const Address = styled.span`
   position:absolute;
   right:70px;
-  width:140px;
+  width:150px;
   text-align: right;
 `;
 

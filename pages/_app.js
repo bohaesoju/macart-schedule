@@ -27,6 +27,10 @@ export default class MyApp extends App {
         <meta name="og:description" content="맥아트 스튜디오 대관 현황 조회"></meta>
         <meta property="og:type" content="website"></meta>
         <meta property="og:image" content="http://danceworld.shop/favicon.ico"></meta>
+        <style>{`
+            #__next { height: 100% }
+          `}
+          </style>
       </Head>
        {/* <Helmet
           title="맥아트 스튜디오 스케줄"
