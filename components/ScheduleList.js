@@ -55,7 +55,7 @@ const ScheduleList = () => {
     <>
       <List
         header={<TopTitle><DanceImage src="/dance.gif" /> 맥아트 스튜디오 스케줄</TopTitle>}
-        footer={<div>대관 문의 : <Link href="tel:01047369161"><a>01047369161</a></Link></div>}
+        footer={<div>대관 문의 : <Link href="tel:01038022904"><a>01038022904</a></Link></div>}
         bordered
         dataSource={data}
         renderItem={item => (
