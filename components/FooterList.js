@@ -33,6 +33,12 @@ const Footer = styled.div`
     }
 `;
 
+const SmallInstagram = styled.img`
+    width:20px;
+    border-radius: 50%;
+    margin-top: -1px;
+`;
+
 const danceworldList = [
     ['naver.jpeg','https://m.cafe.naver.com/sublimecreww'],
     ['instagram.png','https://www.instagram.com/dancew0rld/?hl=ko'],
@@ -56,7 +62,7 @@ const FooterList = () => {
             })}
             </LinkListWrap>
             <Footer>
-                <p>Made with by <Link href="https://www.instagram.com/uyjoong/?hl=ko"><a>Uyjoong Kim</a></Link></p>
+                <p>Made with by <Link href="https://www.instagram.com/uyjoong/?hl=ko"><a>Uyjoong Kim <SmallInstagram src="/instagram.png" /></a></Link></p>
             </Footer> 
         </>
       )
